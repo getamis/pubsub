@@ -158,7 +158,7 @@ func TestMultiSubOnceEach(t *testing.T) {
 }
 
 func TestMultiSubCombined(t *testing.T) {
-	ps := New(6)
+	ps := New[string](6)
 
 	ch1 := ps.Sub("t1", "t2")
 	ch2 := ps.SubOnce("t1", "t2")
@@ -176,7 +176,7 @@ func TestMultiSubCombined(t *testing.T) {
 }
 
 func TestPubWithoutSub(t *testing.T) {
-	ps := New(1)
+	ps := New[string](1)
 	ps.Pub("hi", "t1")
 	ps.Shutdown()
 }
